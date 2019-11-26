@@ -16,7 +16,7 @@ class ProductApiController extends BaseController
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::orderBy('id','desc')->get();
 
 
         return $this->sendResponse($products->toArray(), 'Products retrieved successfully.');
